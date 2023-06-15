@@ -8,9 +8,13 @@ for (let i = 0; i < 12; i++) {
 
 const colorContainerElAll = document.querySelectorAll(".color-container");
 
+generateColor();
+
 function generateColor() {
     colorContainerElAll.forEach((colorContainer)=> {
         const newColorCode = randomColor();
+        colorContainer.style.backgroundColor = "#" + newColorCode;
+        colorContainer.innerText = "#" + newColorCode
     })
 }
 
@@ -22,6 +26,6 @@ function randomColor() {
     for (let i = 0; i < colorCodeLength; i++) {
         const randomNum = Math.floor(Math.random() * char.length);
         colorCode += char.substring(randomNum, randomNum + 1);
-        return colorCode;
     }
+    return colorCode;
 }
